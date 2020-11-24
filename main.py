@@ -13,6 +13,7 @@ def openFile():
         textArea.insert(END, importText)
         file.close()
 
+
 def saveToFile():
     fileName = filedialog.askopenfilename()
     if fileName != "":
@@ -21,10 +22,18 @@ def saveToFile():
         file.write(text)
         file.close()
 
+
 def doTask4():
     messagebox.showinfo("Task4", "True" if task4(textArea.get("1.0", END)) else "False")
 
+def doTask7():
+    messagebox.showinfo("Task36", "True" if task7(textArea.get("1.0", END)) else "False")
 
+def doTask11():
+    messagebox.showinfo("Task36", task11(textArea.get("1.0", END)))
+
+def doTask36():
+    messagebox.showinfo("Task36", "True" if task36(textArea.get("1.0", END)) else "False")
 
 
 notepadWindow = Tk()
@@ -36,6 +45,9 @@ menuArea.add_cascade(label="File", menu=fileMenu)
 fileMenu.add_command(label="Open", command=openFile)
 fileMenu.add_command(label="Save", command=saveToFile)
 menuArea.add_command(label="Task4", command=doTask4)
+menuArea.add_command(label="Task7", command=doTask7)
+menuArea.add_command(label="Task11", command=doTask11)
+menuArea.add_command(label="Task36", command=doTask36)
 
 textArea = ScrolledText(notepadWindow)
 textArea.pack()
