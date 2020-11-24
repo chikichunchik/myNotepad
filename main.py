@@ -27,10 +27,10 @@ def doTask4():
     messagebox.showinfo("Task4", "True" if task4(textArea.get("1.0", END)) else "False")
 
 def doTask7():
-    messagebox.showinfo("Task36", "True" if task7(textArea.get("1.0", END)) else "False")
+    messagebox.showinfo("Task7", "True" if task7(textArea.get("1.0", END)) else "False")
 
 def doTask11():
-    messagebox.showinfo("Task36", task11(textArea.get("1.0", END)))
+    messagebox.showinfo("Task11", task11(textArea.get("1.0", END)))
 
 def doTask36():
     messagebox.showinfo("Task36", "True" if task36(textArea.get("1.0", END)) else "False")
