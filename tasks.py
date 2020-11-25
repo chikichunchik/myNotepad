@@ -64,6 +64,11 @@ def task48(strng):
     return word
 
 def task20(strng):
+    listOfnumbers = list("0123456789 ")
+    for i in strng:
+        if i in listOfnumbers: strng = strng   
+        else:
+            return( "Введеный символ не число")
     word = ''
     for i in range(int(strng)+1):
         num = i
@@ -83,23 +88,59 @@ def task20(strng):
         if(index == 0):
             word += str(int(num % 3))
         word +=", "
+    word = word[:int(len(word) -2)]
+    word += "."
     return word
 
 def task62(strng):
-    newstrng = strng.replace(".","")
-    newstrng = newstrng.split()
+    if(task62firstCheck(strng)): return task62firstCheck(strng) 
+    strng = ('.'.join(strng.split('.')[:-1]))
+    if(task62SecondCheck(strng)): return task62SecondCheck(strng) 
+    strng = strng.split()
     word=""
-    for i in sorted(newstrng):
-        word = word + " " + i
+    for i in sorted(strng):
+        word = word + i + " " 
+    word = word[:int(len(word) -1)]
     word += "."
     return word
 
 def task50(strng):
-    firststrng = strng.replace(".","")
+    if(task50firstCheck(strng)): return task50firstCheck(strng) 
+    strng = ('.'.join(strng.split('.')[:-1]))
+    if(task50SecondCheck(strng)): return task50SecondCheck(strng) 
     secondsrtng = ""
-    for i in sorted(firststrng):
+    for i in sorted(strng):
         if(i != " "):
             secondsrtng = secondsrtng + i
-    secondsrtng = secondsrtng[1:]
-    firststrng = firststrng[:int(len(firststrng) -1)]
-    return True if(secondsrtng == firststrng) else False
+    return "True" if(secondsrtng == strng) else "False"
+
+
+def task50firstCheck(strng):
+    numberOfPoints = 0
+    for i in strng:
+        if(i == ' ' and numberOfPoints == 0): return "у тексте есть пропуск"
+        if(i == '.'): numberOfPoints += 1  
+    if(numberOfPoints == 0): return "у тексте нету точки"
+    elif (numberOfPoints > 1): return "у тексте больше 1 точки"
+    return 0 
+def task50SecondCheck(strng):
+    ukr_alfa = list("ЙЦУКЕНГҐШЩЗХЇЄЖДЛОРПАВІФЯЧСМИТЬБЮ")
+    for i in strng:
+        if i in ukr_alfa: strng = strng   
+        else:
+            return( "Введены незнакомые символы")
+    return 0 
+def task62firstCheck(strng):
+    numberOfPoints = 0
+    for i in strng:
+        if(i == '.'): numberOfPoints += 1  
+    if(numberOfPoints == 0): return "у тексте нету точки"
+    elif (numberOfPoints > 1): return "у тексте больше 1 точки"
+    return 0 
+def task62SecondCheck(strng):
+    ukr_alfa = list("абвгґдеєжзиійїклмнопрстуфхцчшщьюя ")
+    for i in strng:
+        if i in ukr_alfa: strng = strng   
+        else:
+            return( "Введены незнакомые символы")
+    return 0

@@ -3,7 +3,6 @@ from tkinter import filedialog, messagebox
 from tkinter.scrolledtext import ScrolledText
 from tasks import *
 
-
 def openFile():
     fileName = filedialog.askopenfilename()
     if fileName != "":
@@ -30,7 +29,7 @@ def doTask7():
     messagebox.showinfo("Task7", "True" if task7(textArea.get("1.0", END)) else "False")
 
 def doTask50():
-    messagebox.showinfo("Task50", "True" if task50(textArea.get("1.0", END)) else "False")
+    messagebox.showinfo("Task50", task50(textArea.get("1.0", END)))
 
 def doTask11():
     messagebox.showinfo("Task11", task11(textArea.get("1.0", END)))
@@ -69,16 +68,16 @@ fileMenu = Menu(menuArea)
 menuArea.add_cascade(label="File", menu=fileMenu)
 fileMenu.add_command(label="Open", command=openFile)
 fileMenu.add_command(label="Save", command=saveToFile)
+menuArea.add_command(label="Task2", command=doTask2)
 menuArea.add_command(label="Task4", command=doTask4)
 menuArea.add_command(label="Task7", command=doTask7)
 menuArea.add_command(label="Task11", command=doTask11)
-menuArea.add_command(label="Task36", command=doTask36)
-menuArea.add_command(label="Task2", command=doTask2)
-menuArea.add_command(label="Task31", command=doTask31)
-menuArea.add_command(label="Task48", command=doTask48)
 menuArea.add_command(label="Task20", command=doTask20)
-menuArea.add_command(label="Task62", command=doTask62)
+menuArea.add_command(label="Task31", command=doTask31)
+menuArea.add_command(label="Task36", command=doTask36)
+menuArea.add_command(label="Task48", command=doTask48)
 menuArea.add_command(label="Task50", command=doTask50)
+menuArea.add_command(label="Task62", command=doTask62)
 
 textArea = ScrolledText(notepadWindow, bd=0)
 textArea.pack(fill=BOTH, expand=True)
