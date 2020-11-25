@@ -54,12 +54,12 @@ def doTask48():
 def doTask20():
     text_in_area = textArea.get("1.0", END)
     textArea.delete("1.0", END)
-    textArea.insert("1.0", task20(text_in_area)) 
+    textArea.insert("1.0", task20(text_in_area))
 
 def doTask62():
     text_in_area = textArea.get("1.0", END)
     textArea.delete("1.0", END)
-    textArea.insert("1.0", task62(text_in_area)) 
+    textArea.insert("1.0", task62(text_in_area))
 
 notepadWindow = Tk()
 notepadWindow.title("My notepad")

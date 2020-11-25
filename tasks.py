@@ -34,10 +34,9 @@ def task7(strng):
     return True if numberOfA > numberOfB else False
 
 def task11(strng):
-    strng = strng.lower()
     strng = list(strng)
     for i in range(len(strng) - 1):
-        if strng[i] == 'a' and i != len(strng) - 2:
+        if (strng[i] == 'a' or strng[i] == 'A') and i != len(strng) - 2:
             return strng[i + 1]
         elif i == len(strng) - 2:
             return "There are no 'a' in text or a in the end of the text"
@@ -49,23 +48,18 @@ def task2(strng):
     return word
 
 def task31(strng):
-    word = ''
-    for i in strng:
-        if i == 'a':
-            word += 'A'
-        else:
-            word += i
-    return word
+    strng = list(strng)
+    for i in range(len(strng)):
+        if strng[i] == 'a':
+            strng[i] = 'A'
+    return ''.join(strng)
 
 def task48(strng):
     ukr_alfa = "абвгґдеєжзиійїклмнопрстуфхцчшщьюя"
+    ukr_alfa = list(ukr_alfa)
     word = ''
     for i in strng:
-        is_ukr_letter = False
-        for ch in ukr_alfa:
-            if i == ch :
-                is_ukr_letter = True
-        if is_ukr_letter == True:
+        if i in ukr_alfa:
             word += i
     return word
 
@@ -84,7 +78,7 @@ def task20(strng):
                 word += str(int(num / (3**index)))
                 num = int(num - int(num / (3**index)) * (3**index))
             else:
-                word += "0" 
+                word += "0"
             index -=1
         if(index == 0):
             word += str(int(num % 3))
@@ -97,13 +91,13 @@ def task62(strng):
     word=""
     for i in sorted(newstrng):
         word = word + " " + i
-    word += "."  
+    word += "."
     return word
 
 def task50(strng):
     firststrng = strng.replace(".","")
     secondsrtng = ""
-    for i in sorted(firststrng):  
+    for i in sorted(firststrng):
         if(i != " "):
             secondsrtng = secondsrtng + i
     secondsrtng = secondsrtng[1:]
