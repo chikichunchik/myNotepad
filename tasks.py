@@ -69,4 +69,43 @@ def task48(strng):
             word += i
     return word
 
+def task20(strng):
+    word = ''
+    for i in range(int(strng)+1):
+        num = i
+        index = 0
+        while (num > 2):
+            if(int(num / 3) > 0):
+                index += 1
+                num = int(num / 3)
+        num = i
+        while (index > 0):
+            if(num % (3**index) >= 0):
+                word += str(int(num / (3**index)))
+                num = int(num - int(num / (3**index)) * (3**index))
+            else:
+                word += "0" 
+            index -=1
+        if(index == 0):
+            word += str(int(num % 3))
+        word +=", "
+    return word
 
+def task62(strng):
+    newstrng = strng.replace(".","")
+    newstrng = newstrng.split()
+    word=""
+    for i in sorted(newstrng):
+        word = word + " " + i
+    word += "."  
+    return word
+
+def task50(strng):
+    firststrng = strng.replace(".","")
+    secondsrtng = ""
+    for i in sorted(firststrng):  
+        if(i != " "):
+            secondsrtng = secondsrtng + i
+    secondsrtng = secondsrtng[1:]
+    firststrng = firststrng[:int(len(firststrng) -1)]
+    return True if(secondsrtng == firststrng) else False
