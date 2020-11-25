@@ -62,9 +62,9 @@ def doTask62():
 
 notepadWindow = Tk()
 notepadWindow.title("My notepad")
-menuArea = Menu(notepadWindow)
+menuArea = Menu(notepadWindow, tearoff=0)
 notepadWindow.config(menu=menuArea)
-fileMenu = Menu(menuArea)
+fileMenu = Menu(menuArea, tearoff=0)
 menuArea.add_cascade(label="File", menu=fileMenu)
 fileMenu.add_command(label="Open", command=openFile)
 fileMenu.add_command(label="Save", command=saveToFile)
