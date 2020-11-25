@@ -64,8 +64,13 @@ def task48(strng):
     return word
 
 def task20(strng):
+    strng = strng.split()
+    strng = ''.join(strng)
     listOfnumbers = list("0123456789 ")
+    print(strng)
+    print(listOfnumbers)
     for i in strng:
+        print(type(i))
         if i in listOfnumbers: strng = strng   
         else:
             return( "Введеный символ не число")
