@@ -6,7 +6,7 @@ def task4(strng):
             numberOfBrackets += 1
         if i == "z":
             numberOfBrackets -= 1
-        if numberOfBrackets > 0 and not i.isalpha():
+        if numberOfBrackets > 0 and (not i.isalpha() or i.isupper()):
             return False
     return True
 
@@ -53,7 +53,7 @@ def task31(strng):
     for i in strng:
         if i == 'a':
             word += 'A'
-        else: 
+        else:
             word += i
     return word
 
@@ -68,3 +68,5 @@ def task48(strng):
         if is_ukr_letter == True:
             word += i
     return word
+
+
