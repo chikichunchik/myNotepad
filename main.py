@@ -35,6 +35,18 @@ def doTask11():
 def doTask36():
     messagebox.showinfo("Task36", "True" if task36(textArea.get("1.0", END)) else "False")
 
+def doTask2():
+    messagebox.showinfo("Task2", task2(textArea.get("1.0", END)))
+
+def doTask31():
+    text_in_area = textArea.get("1.0", END)
+    textArea.delete("1.0", END)
+    textArea.insert("1.0", task31(text_in_area))
+
+def doTask48():
+    text_in_area = textArea.get("1.0", END)
+    textArea.delete("1.0", END)
+    textArea.insert("1.0", task48(text_in_area))
 
 notepadWindow = Tk()
 notepadWindow.title("My notepad")
@@ -48,6 +60,9 @@ menuArea.add_command(label="Task4", command=doTask4)
 menuArea.add_command(label="Task7", command=doTask7)
 menuArea.add_command(label="Task11", command=doTask11)
 menuArea.add_command(label="Task36", command=doTask36)
+menuArea.add_command(label="Task2", command=doTask2)
+menuArea.add_command(label="Task31", command=doTask31)
+menuArea.add_command(label="Task48", command=doTask48)
 
 textArea = ScrolledText(notepadWindow)
 textArea.pack()

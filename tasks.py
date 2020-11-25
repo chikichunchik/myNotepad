@@ -6,7 +6,7 @@ def task4(strng):
             numberOfBrackets += 1
         if i == "z":
             numberOfBrackets -= 1
-        if numberOfBrackets > 0 and (not i.isalpha() or i.isupper()):
+        if numberOfBrackets > 0 and not i.isalpha():
             return False
     return True
 
@@ -42,6 +42,29 @@ def task11(strng):
         elif i == len(strng) - 2:
             return "There are no 'a' in text or a in the end of the text"
 
+def task2(strng):
+    word = 'can`t do this operation: too small text'
+    if len(strng) > 71:
+        word = strng[65] + strng[71] + strng[69]
+    return word
 
+def task31(strng):
+    word = ''
+    for i in strng:
+        if i == 'a':
+            word += 'A'
+        else: 
+            word += i
+    return word
 
-
+def task48(strng):
+    ukr_alfa = "абвгґдеєжзиійїклмнопрстуфхцчшщьюя"
+    word = ''
+    for i in strng:
+        is_ukr_letter = False
+        for ch in ukr_alfa:
+            if i == ch :
+                is_ukr_letter = True
+        if is_ukr_letter == True:
+            word += i
+    return word
