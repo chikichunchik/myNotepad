@@ -81,24 +81,24 @@ def task20(strng):
         if i in listOfnumbers:
             strng = strng
         else:
-            return ("Введеный символ не число")
+            return "Entered symbol is not a number"
     word = ''
     for i in range(int(strng) + 1):
         num = i
         index = 0
-        while (num > 2):
-            if (int(num / 3) > 0):
+        while num > 2:
+            if int(num / 3) > 0:
                 index += 1
                 num = int(num / 3)
         num = i
-        while (index > 0):
-            if (num % (3 ** index) >= 0):
+        while index > 0:
+            if num % (3 ** index) >= 0:
                 word += str(int(num / (3 ** index)))
                 num = int(num - int(num / (3 ** index)) * (3 ** index))
             else:
                 word += "0"
             index -= 1
-        if (index == 0):
+        if index == 0:
             word += str(int(num % 3))
         word += ", "
     word = word[:int(len(word) - 2)]
@@ -107,9 +107,9 @@ def task20(strng):
 
 
 def task62(strng):
-    if (task62firstCheck(strng)): return task62firstCheck(strng)
+    if task62firstCheck(strng): return task62firstCheck(strng)
     strng = ('.'.join(strng.split('.')[:-1]))
-    if (task62SecondCheck(strng)): return task62SecondCheck(strng)
+    if task62SecondCheck(strng): return task62SecondCheck(strng)
     strng = strng.split()
     word = ""
     for i in sorted(strng):
@@ -120,12 +120,12 @@ def task62(strng):
 
 
 def task50(strng):
-    if (task50firstCheck(strng)): return task50firstCheck(strng)
+    if task50firstCheck(strng): return task50firstCheck(strng)
     strng = ('.'.join(strng.split('.')[:-1]))
-    if (task50SecondCheck(strng)): return task50SecondCheck(strng)
+    if task50SecondCheck(strng): return task50SecondCheck(strng)
     secondsrtng = ""
     for i in sorted(strng):
-        if (i != " "):
+        if i != " ":
             secondsrtng = secondsrtng + i
     return "True" if (secondsrtng == strng) else "False"
 
@@ -133,11 +133,11 @@ def task50(strng):
 def task50firstCheck(strng):
     numberOfPoints = 0
     for i in strng:
-        if (i == ' ' and numberOfPoints == 0): return "Unavailable input"
-        if (i == '.'): numberOfPoints += 1
-    if (numberOfPoints == 0):
+        if i == ' ' and numberOfPoints == 0: return "Unavailable input"
+        if i == '.': numberOfPoints += 1
+    if numberOfPoints == 0:
         return "Unavailable input"
-    elif (numberOfPoints > 1):
+    elif numberOfPoints > 1:
         return "Unavailable input"
     return 0
 
@@ -148,17 +148,17 @@ def task50SecondCheck(strng):
         if i in ukr_alfa:
             strng = strng
         else:
-            return ("Unavailable input")
+            return "Unavailable input"
     return 0
 
 
 def task62firstCheck(strng):
     numberOfPoints = 0
     for i in strng:
-        if (i == '.'): numberOfPoints += 1
-    if (numberOfPoints == 0):
+        if i == '.': numberOfPoints += 1
+    if numberOfPoints == 0:
         return "Unavailable input"
-    elif (numberOfPoints > 1):
+    elif numberOfPoints > 1:
         return "Unavailable input"
     return 0
 
@@ -169,5 +169,5 @@ def task62SecondCheck(strng):
         if i in ukr_alfa:
             strng = strng
         else:
-            return ("Unavailable input")
+            return "Unavailable input"
     return 0
